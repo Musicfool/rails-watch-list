@@ -1,0 +1,39 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to 'New List', new_list_path %>
+          </li>
+          <li class="nav-item">
+           <%= link_to 'My Lists', lists_path %>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://stephenkingfrance.fr/wp-content/uploads/2023/12/morgan-freeman-shawshank-redemption-tim-robbins-evades.webp);">
+  <div class="container">
+    <h1>What will you watch tonight ?</h1>
+  </div>
+</div>
+<header>
+    <h1>WatchList</h1>
+</header>
+    <h2>Movie Lists</h2>
+    <div class="cards">
+    <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.slashfilm.com/img/gallery/dumb-and-dumber-to-photo-lloyd-and-harry-are-older-not-wiser/intro-import.jpg)">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+    <% end %>
+</div>
